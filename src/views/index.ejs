@@ -21,7 +21,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= note.title %></h5>
         <p class="card-text"><%= note.description %></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="/edit/<%=note.id%>" class="btn btn-primary" class="btn btn-primary">Editar</a>
+        <a href="/delete/<%=note.id%>" class="btn btn-primary" class="btn btn-danger">Eliminar</a>
       </div>
 
       <% }) %>
