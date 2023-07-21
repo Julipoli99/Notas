@@ -2,6 +2,7 @@ import express from "express";
 import route from "./router/route";
 import morgan from "morgan";
 import path from "path";
+import bodyParser from "body-parser";
 
 const app = express();
 
@@ -9,6 +10,8 @@ const app = express();
   await app.listen(3000);
   console.log("Server running on port 3000");
 })();
+
+app.use(bodyParser.json())
 
 app.use(express.urlencoded({ extended: false }));
 

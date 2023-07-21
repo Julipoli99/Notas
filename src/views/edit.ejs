@@ -17,12 +17,23 @@
 
 
 <% notaFiltrada.forEach((nota) => { %>
-<div class="card-body">
-  <h5 class="card-title"><%= nota.title %></h5>
-  <p class="card-text"><%= nota.description %></p>
-  <a href="/edit/<%=nota.id%>" class="btn btn-primary" class="btn btn-primary">Editar</a>
-  <a href="/" class="btn btn-primary" class="btn btn-primary">Volver</a>
-</div>
+  <form action="/edit/<%=nota.id%>" method="POST">
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="<%=nota.title%>">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%=nota.description%></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-success">Editar</button>
+        <a href="/" class="btn btn-primary" class="btn btn-primary">Volver</a>
+      </div>
+    </form>
+    
 <% }) %>
 
 
